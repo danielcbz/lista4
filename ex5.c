@@ -1,21 +1,29 @@
 #include <stdio.h>
 
-// Função recursiva para calcular o valor da série
+// Função para calcular o fatorial de um número
+int fatorial(int num) {
+  if (num <= 1) {
+    return 1;
+  }
+  return num * fatorial(num - 1);
+}
+
+// Função para calcular o valor da série começando de 1
 double serie(int n) {
-    // Caso base: se n for 1, a soma é 1
-    if (n == 1)
-        return 1.0;
-    // Chamada recursiva: 1/n + série até n-1
-    return 1.0 / n + serie(n - 1);
+  if (n == 1) {
+    return 1.0;  // O primeiro termo da série é 1
+  }
+  return (1.0 / fatorial(n)) + serie(n - 1);
 }
 
 int main() {
-    int n;
-    scanf("%d", &n);
-
-    // Verificando se o valor de n é maior que 0
-    if (n > 0) {
-        // Chamando a função recursiva e exibindo o resultado
-        printf("%.2lf\n", serie(n));}
-    return 0;
+  // Declaração da variável
+  int n;
+  // Solicita o número ao usuário
+  scanf("%d", &n);
+  // Chama a função da série e exibe o resultado
+  double resultado = serie(n);
+  printf("%.2f\n", resultado); // Exibe o resultado com duas casas decimais
+  // Finalizando o código
+  return 0;
 }

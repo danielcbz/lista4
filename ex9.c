@@ -15,6 +15,6 @@ int main() {
     int hora, min, seg;
     scanf("%d", &totalSegundos);
     converteHora(totalSegundos, &hora, &min, &seg);
-    printf("%02d:%02d:%02d\n", hora, min, seg);
+    printf("%d:%d:%d\n", hora, min, seg);
     return 0;
 }
